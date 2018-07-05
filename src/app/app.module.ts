@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from "@angular/forms";
+import { PowerPipe } from './power.pipe';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PowerPipe
   ],
   imports: [
     BrowserModule,
