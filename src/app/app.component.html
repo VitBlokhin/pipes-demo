@@ -2,27 +2,21 @@
   <div class="row">
     <div class="col">
       <h1>{{ title }}</h1>
-      <h1>{{ title | uppercase }}</h1>
-      <h1>{{ title | slice:0:8 }}</h1>
       <hr/>
-      <p>{{ pi }}</p>
-      <p>{{ pi | number }}</p>
-      <p>{{ pi | number:'1.4-5' }}</p>
-      <p>{{ pi | number:'2.4-5' }}</p>
+      <div class="input-group">
+        <input type="text" class="form-control" [(ngModel)]="filterText" placeholder="{{ filterLabel }}">
+        <!--<div class="input-group-append">
+          <button class="btn btn-secondary">{{ filterLabel }}</button>
+        </div>-->
+      </div>
       <hr/>
-      <p>{{ money | currency:'EUR':true }}</p>
-      <hr/>
-      <p>{{ date }}</p>
-      <p>{{ date | date }}</p>
-      <p>{{ date | date:'fullDate' }}</p>
-      <p>{{ date | date:'shortDate' }}</p>
-      <p>{{ date | date:'shortTime' }}</p>
-      <hr/>
-      <p>{{ amount }}</p>
-      <p>{{ amount | percent }}</p>
-      <hr/>
-      <p>{{ object }}</p>
-      <p>{{ object | json }}</p>
+
+      <ul class="list-group">
+        <li *ngFor="let car of cars | textFilter:filterText:'name'"
+          class="list-group-item">
+          {{ car.name }}
+        </li>
+      </ul>
     </div>
   </div>
 </div>

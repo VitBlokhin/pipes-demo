@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from "@angular/forms";
+import { TextFilterPipe } from './text-filter.pipe';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TextFilterPipe
   ],
   imports: [
     BrowserModule,
